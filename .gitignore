@@ -3,3 +3,5 @@ qa-*.png
 .sites-runtime/
 qa-*.json
 qa-*.pdf
+
+qa-*.html
