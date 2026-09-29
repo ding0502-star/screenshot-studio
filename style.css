@@ -11,3 +11,35 @@ dialog{width:min(740px,94vw);max-height:88dvh;overflow:auto;border:1px solid var
 main{grid-template-columns:250px minmax(0,1fr) 245px;min-height:720px}.organizer{padding:20px 14px;background:white;border-left:1px solid var(--line);overflow:auto}.organizer h2{color:#24344a}.auto-number{font-size:.875rem;display:flex;gap:6px;margin-bottom:10px}#objectList{padding:0;list-style:none}#objectList li{padding:10px;border:1px solid var(--line);border-radius:8px;margin:8px 0;font-size:.875rem}#objectList li.selected{border-color:#e83254;background:#fff3f6}#objectList .object-name{display:block;width:100%;text-align:left;overflow-wrap:anywhere;background:transparent;border:0;padding:4px}#objectList .row-actions{display:flex;gap:3px;flex-wrap:wrap}#objectList .row-actions button{padding:5px;font-size:.75rem}.tools{grid-template-columns:repeat(3,1fr);gap:5px}.tools button,.tools .step-tool{height:64px;font-size:.75rem}.tools b{font-size:23px}.tools span{display:none}.action-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.extra-options{grid-column:1/-1}.extra-options button{font-size:.8125rem;padding:8px}.extra-options>button{width:100%;margin-bottom:8px}select{max-width:135px;padding:6px;border:1px solid #d8dde6;border-radius:6px;font-size:.8125rem;color:inherit;background:white}.page-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 14px;background:white;border-bottom:1px solid var(--line);font-size:.8125rem}.page-controls label{display:flex;gap:6px;align-items:center}.page-controls input{width:160px;border:1px solid var(--line);border-radius:4px;padding:7px}.page-controls button{padding:6px 8px;font-size:.8125rem}#draftStatus{color:#64748b;font-size:.75rem;margin-left:auto}#pageStrip{display:flex;gap:8px;overflow-x:auto;padding:10px 14px;background:#f8fafc;min-height:56px}#pageStrip button{white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis}#pageStrip button.current{border-color:#e83254;background:#fff0f3;color:#b51f3c}.draft-banner{padding:10px;background:#fff1cc;font-size:.875rem}.draft-banner button{padding:6px 10px;margin-left:8px}#ocrDialog textarea{max-height:none;min-height:170px}#ocrDialog progress{width:100%;margin:12px 0}#ocrCandidates label{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}#bookDialog>label{display:inline-flex;flex-direction:column;gap:8px;margin:12px}.header-actions{flex-wrap:wrap}header{height:auto;min-height:84px;padding-top:12px;padding-bottom:12px}#ocrDialog h3{font-size:1rem;margin-top:24px}#bookStatus{color:#64748b}.workspace{overflow:hidden}.board{min-height:180px}@media(max-width:1150px){main{grid-template-columns:220px minmax(0,1fr)}.organizer{grid-column:1/-1;max-height:300px;border-top:1px solid var(--line)}main{height:auto}.workspace{height:80dvh;min-height:600px}aside{max-height:80dvh}.header-actions button{padding:8px;font-size:.8125rem}}@media(max-width:600px){main{display:flex}.organizer{order:4;max-height:400px}.workspace{height:75dvh;min-height:520px}aside{max-height:none}.tools{grid-template-columns:repeat(4,1fr)}.page-controls label{width:100%}.page-controls input{flex:1}.page-controls button{font-size:.75rem}.page-controls #draftStatus{width:100%;margin:4px 0}.organizer small{display:block}#pageStrip{min-height:54px}.settings{display:block}.settings input[type=range]{width:100%}header{gap:10px}.header-actions{gap:5px}.workspace-bar{min-height:55px}#empty{min-height:260px}.board{padding:16px}}
 
 .tools button,.tools .step-tool{font-size:.875rem;padding:4px;height:70px;gap:4px;white-space:nowrap}.tools b{font-size:22px;line-height:24px;white-space:nowrap}.settings label{line-height:1.5}#pageTitle{min-width:0}@media(max-width:600px){.tools button,.tools .step-tool,.tools button[data-tool=mosaic]{height:65px;font-size:.8125rem}}
+
+/* Progressive disclosure and document workflows */
+body[data-mode="simple"] .advanced-only{display:none!important}
+body[data-mode="simple"] main{grid-template-columns:250px minmax(0,1fr)}
+#uiMode{max-width:125px;border:1px solid #cdd7e6;border-radius:8px;padding:9px;background:#fff;color:#273b58;font:inherit}
+#snippets{border-top:1px solid #e3e9f2;margin-top:14px;padding-top:14px}
+#snippets select{width:100%;max-width:100%;margin:6px 0}
+#snippets>button,.publication-settings>button{width:100%;margin:5px 0}
+#versionStatus{display:block;overflow-wrap:anywhere;margin:8px 0;color:#69798e}
+.choice{display:flex;gap:10px;align-items:flex-start;padding:12px 0;line-height:1.6}
+.choice input{width:auto;flex:none;margin-top:6px}
+#versionsDialog,#checkDialog,#publicationDialog,#replaceDialog{width:min(660px,calc(100vw - 32px));max-height:85vh;overflow:auto;box-sizing:border-box}
+#versionsList,#checkList{padding:0;list-style:none;max-height:45vh;overflow:auto}
+#versionsList li,#checkList li{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px;border-bottom:1px solid #e2e8f0}
+#versionsList li span,#checkList li span{overflow-wrap:anywhere;min-width:0}
+#versionsList li button,#checkList li button{flex:none}
+.publication-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+.publication-grid label{display:flex;flex-direction:column;gap:8px;min-width:0}
+.publication-grid input,#versionName{width:100%;box-sizing:border-box;border:1px solid #cbd5e1;padding:10px;border-radius:7px;font:inherit}
+#logoPreview{max-width:240px;max-height:100px;object-fit:contain;border:1px solid #e2e8f0;padding:12px}
+#publicationStatus,#replaceStatus{color:#a34116}
+#savePublication,#continueExport,#confirmReplace{margin-top:18px}
+#readerDialog{width:min(1120px,calc(100vw - 32px));max-height:94vh;box-sizing:border-box;padding:24px}
+#readerViewport{overflow:auto;max-height:64vh;text-align:center;background:#e9eef5;border:1px solid #dce4ee;border-radius:8px}
+#readerImage{display:block;max-width:100%;height:auto;margin:auto}
+#readerCaption{white-space:pre-wrap;overflow-wrap:anywhere;background:#eff6ff;border-left:4px solid #2563eb;padding:14px;max-height:15vh;overflow:auto;font-size:18px;line-height:1.6}
+.reader-nav{display:flex;justify-content:space-between;gap:16px;margin:12px 0}
+#readerProgress{color:#526580}
+@media(max-width:760px){body[data-mode="simple"] main{grid-template-columns:1fr}.publication-grid{grid-template-columns:1fr}#readerDialog{padding:14px}#readerViewport{max-height:55vh}#versionsList li,#checkList li{gap:8px;padding:10px 0}#uiMode{max-width:110px}.header-actions{flex-wrap:wrap}}
+
+
+#snippets .field-label{display:block}#snippets .field-label select{display:block;margin-top:8px}
