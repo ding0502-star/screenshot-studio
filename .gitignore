@@ -1,3 +1,4 @@
 qa-*.png
 *.tar.gz
 .sites-runtime/
+qa-*.json
