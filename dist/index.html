@@ -17,14 +17,15 @@
 <button data-tool="arrow" aria-pressed="false"><b>↗</b>箭頭<span>A</span></button>
 <button data-tool="number" aria-pressed="false"><b>①</b>編號<span>N</span></button>
 <button data-tool="text" aria-pressed="false"><b>T</b>文字<span>T</span></button>
-<button data-tool="mosaic" aria-pressed="false"><b>▦</b>馬賽克<span>M</span></button>
+
+<button data-tool="mosaic" aria-pressed="false"><b>▦</b>馬賽克<span>M</span></button><button data-tool="step" class="step-tool" aria-pressed="false"><b>① ▤</b>步驟說明框<span>S</span></button>
 </div></section>
 <section class="settings"><h2 id="settingsTitle">標註樣式</h2><label class="field-label">顏色 <input id="color" type="color" value="#f43f5e" aria-label="標註顏色"></label><div class="swatches" aria-label="常用顏色"><button style="--sw:#f43f5e" data-color="#f43f5e" aria-label="紅色"></button><button style="--sw:#2563eb" data-color="#2563eb" aria-label="藍色"></button><button style="--sw:#16a34a" data-color="#16a34a" aria-label="綠色"></button><button style="--sw:#f59e0b" data-color="#f59e0b" aria-label="橘色"></button><button style="--sw:#172033" data-color="#172033" aria-label="深灰色"></button><button style="--sw:#ffffff" data-color="#ffffff" aria-label="白色"></button></div>
 <label class="field-label" for="width">線條粗細 <output id="widthValue">6 px</output></label><input id="width" type="range" min="2" max="24" value="6">
 <label class="field-label" for="size">文字／編號大小 <output id="sizeValue">40 px</output></label><input id="size" type="range" min="16" max="160" value="40">
-<div id="textField"><label class="field-label" for="textInput">說明文字</label><textarea id="textInput" rows="3" placeholder="例如：點選申請，再上傳附件">點選這裡</textarea><small>選擇文字工具後，點一下圖片放置。</small></div>
+<div id="textField"><label class="field-label" for="textInput">說明文字</label><textarea id="textInput" rows="3" placeholder="例如：點選申請，再上傳附件">點選這裡</textarea><small>選擇文字或步驟說明框後，點一下圖片放置。</small></div>
 <label class="field-label" for="nextNumber">下一個編號 <input id="nextNumber" type="number" min="1" max="999" value="1"></label>
-<button id="delete" class="delete" disabled>刪除選取的標註</button></section>
+<div id="stepOptions" hidden><label class="field-label" for="stepWidth">說明框寬度</label><input id="stepWidth" type="range" min="160" max="1600" value="440"><small>文字會自動換行，也可按 Enter 分行。</small><label class="field-label" for="stepNumber">選取步驟的編號<input id="stepNumber" type="number" min="1" max="999" value="1"></label></div><button id="delete" class="delete" disabled>刪除選取的標註</button></section>
 <section class="project-settings"><h2>圖片外圍留白</h2><small>在空白區加上說明，避免遮住截圖。單位：px。</small><div class="margin-grid"><label>上<input id="marginTop" type="number" min="0" max="2000" value="0"></label><label>下<input id="marginBottom" type="number" min="0" max="2000" value="0"></label><label>左<input id="marginLeft" type="number" min="0" max="2000" value="0"></label><label>右<input id="marginRight" type="number" min="0" max="2000" value="0"></label></div><button id="applyMargins" disabled>套用留白</button></section>
 <section class="project-settings"><h2>可編輯專案</h2><div class="project-actions"><button id="saveProject" disabled>儲存專案</button><button id="openProject">開啟專案</button></div><small>下載 JSON 檔，保留原圖、留白與標註，下次可繼續編輯。專案包含未遮蔽的原圖，分享教學請使用 PNG。</small></section><div class="privacy"><span>◈</span><p>圖片留在你的瀏覽器<br><small>不會上傳至伺服器</small></p></div>
 </aside>
@@ -35,4 +36,5 @@
 </div>
 </main><div id="toast" role="status" aria-live="polite" hidden></div>
 </body></html>
+
 
