@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
 <body>
-<header><a class="brand" href="./"><span class="brand-mark">▣</span><span>框一下<small>教學截圖工具</small></span></a><div class="header-actions"><button id="upload">＋ 開啟圖片</button><button class="primary" id="export" disabled>下載 PNG</button></div></header>
+<header><a class="brand" href="./"><span class="brand-mark">▣</span><span>框一下<small>教學截圖工具</small></span></a><div class="header-actions"><button id="upload">＋ 開啟圖片</button><button id="mergeOpen">合併長圖</button><button id="copyImage" disabled>複製圖片</button><button class="primary" id="export" disabled>下載 PNG</button></div></header>
 <input type="file" id="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
 <input type="file" id="projectFile" accept=".json,application/json" hidden><main>
 <aside>
@@ -18,7 +18,7 @@
 <button data-tool="number" aria-pressed="false"><b>①</b>編號<span>N</span></button>
 <button data-tool="text" aria-pressed="false"><b>T</b>文字<span>T</span></button>
 
-<button data-tool="mosaic" aria-pressed="false"><b>▦</b>馬賽克<span>M</span></button><button data-tool="step" class="step-tool" aria-pressed="false"><b>① ▤</b>步驟說明框<span>S</span></button>
+<button data-tool="mosaic" aria-pressed="false"><b>▦</b>馬賽克<span>M</span></button><button data-tool="mask" aria-pressed="false"><b>■</b>實心遮蔽<span>B</span></button><button data-tool="step" class="step-tool" aria-pressed="false"><b>① ▤</b>步驟說明框<span>S</span></button>
 </div></section>
 <section class="settings"><h2 id="settingsTitle">標註樣式</h2><label class="field-label">顏色 <input id="color" type="color" value="#f43f5e" aria-label="標註顏色"></label><div class="swatches" aria-label="常用顏色"><button style="--sw:#f43f5e" data-color="#f43f5e" aria-label="紅色"></button><button style="--sw:#2563eb" data-color="#2563eb" aria-label="藍色"></button><button style="--sw:#16a34a" data-color="#16a34a" aria-label="綠色"></button><button style="--sw:#f59e0b" data-color="#f59e0b" aria-label="橘色"></button><button style="--sw:#172033" data-color="#172033" aria-label="深灰色"></button><button style="--sw:#ffffff" data-color="#ffffff" aria-label="白色"></button></div>
 <label class="field-label" for="width">線條粗細 <output id="widthValue">6 px</output></label><input id="width" type="range" min="2" max="24" value="6">
@@ -35,6 +35,6 @@
 <footer><span id="hint">小技巧：使用 Ctrl / ⌘ + V 貼上剪貼簿截圖</span><span id="count">0 個標註</span></footer>
 </div>
 </main><div id="toast" role="status" aria-live="polite" hidden></div>
-</body></html>
+<dialog id="mergeDialog" aria-labelledby="mergeTitle"><div class="merge-heading"><h2 id="mergeTitle">合併教學長圖</h2><button id="mergeClose" aria-label="關閉合併視窗">關閉</button></div><p>依順序將截圖由上往下排列，合併後可繼續標註。</p><div class="merge-actions"><button id="mergeAdd">選擇多張圖片</button><button id="mergeCurrent">加入目前成品</button></div><small>目前成品的標註會合成到圖片中。請先儲存專案以保留可編輯版本。</small><input id="mergeFiles" type="file" accept="image/png,image/jpeg,image/webp,image/gif" multiple hidden><ol id="mergeList"></ol><div class="merge-controls"><label>長圖寬度（px）<input id="mergeWidth" type="number" min="200" max="4000" value="1200"></label><label>圖片間距（px）<input id="mergeGap" type="number" min="0" max="500" value="24"></label></div><small>圖片等比例縮小並置中，不放大較小的圖片。最多 20 張。</small><p id="mergeSummary" role="status"></p><button id="buildMerge" class="primary" disabled>建立長圖</button></dialog></body></html>
 
 
